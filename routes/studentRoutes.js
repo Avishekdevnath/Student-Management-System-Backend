@@ -1,5 +1,5 @@
 const express = require("express");
-const multer = require("multer");
+// const multer = require("multer");
 const {
     addStudent,
     getAllStudents,
@@ -19,7 +19,7 @@ const {
 } = require("../controllers/studentController");
 
 const router = express.Router();
-const upload = multer({ dest: "uploads/" });
+// const upload = multer({ dest: "uploads/" });
 
 /* ============================ CRUD Student Management ============================ */
 // ✅ Add a New Student (Auto-Generates Student ID)
@@ -70,6 +70,6 @@ router.get("/top-students", getTopStudents);
 
 /* ============================ Bulk Upload & Export ============================ */
 // ✅ Bulk Upload Students from Excel
-router.post("/bulk-upload/:batchId", upload.single("file"), uploadStudentsFromExcel);
+// router.post("/bulk-upload/:batchId", upload.single("file"), uploadStudentsFromExcel);
 
 module.exports = router;
